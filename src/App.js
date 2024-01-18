@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import Home from './screens/Home';
 import Login from './screens/Login';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
