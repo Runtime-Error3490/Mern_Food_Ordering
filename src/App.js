@@ -1,6 +1,8 @@
 import './App.css';
 import Home from './screens/Home';
 import Login from './screens/Login';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Routes,
