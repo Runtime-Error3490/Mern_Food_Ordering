@@ -2,6 +2,11 @@ const express = require('express');
 const router = require('express').Router();
 const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+//evnironment variable
+require('dotenv').config();
+const jwtSecret=process.env.JWT_SECRET;
 router.post("/CreateUser", [
     body('email').isEmail(),
     body('name').isLength({ min: 5 }),
@@ -11,13 +16,15 @@ router.post("/CreateUser", [
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() })
         }
+        const salt=await bcrypt.genSalt(1 );
+        const hashedPassword=await bcrypt.hash(req.body.password,salt);
         try {
             await User.create(
                 {
                     name: req.body.name,
                     location: req.body.location,
                     email: req.body.email,
-                    password: req.body.password,
+                    password: hashedPassword,
                 }
             )
             res.status(200).json({ success: true });
@@ -44,12 +51,21 @@ router.post("/loginuser", [
             if (!userData) {
                 return res.status(400).json({ msg: "Invalid Credentials" });
             }
-            if (password === userData.password) {
-                return res.status(200).json({ success: true });
-            }
-            else {
+            const pwdCompare=await bcrypt.compare(password,userData.password);
+            if (!pwdCompare) {
                 return res.status(400).json({ msg: "Invalid Credentials" });
             }
+            const data={
+                user:{
+                    id:userData.id
+                }
+            }
+            const authToker=jwt.sign(data,jwtSecret);
+            return res.json({
+                success:true,
+                authToken:authToker
+            });
+
         }
         catch (error) {
             console.log(error);
