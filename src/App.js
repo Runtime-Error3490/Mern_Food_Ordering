@@ -9,6 +9,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Signup from './screens/Signup';
 function App() {
   return (
     <Router> 
@@ -16,6 +17,7 @@ function App() {
     <Routes>
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/login" element={<Login/>}/>
+    <Route exact path="/CreateUser" element={<Signup/>}/>
     </Routes>
     </div>
     </Router>
