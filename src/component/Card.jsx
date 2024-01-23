@@ -1,8 +1,9 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Card() {
   return (
-    <div>
+    <>
         <div className="card mt-3" style={{ width: '18rem', maxHeight: '370px' }}>
           <img className="card-img-top" src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZG9zYXxlbnwwfHwwfHx8MA%3D%3D" alt="Card image cap" />
           <div className="card-body">
@@ -26,6 +27,6 @@ export default function Card() {
             </div>
           </div>
         </div>
-    </div>
+    </>
   )
 }
