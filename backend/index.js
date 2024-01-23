@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 
 app.use(express.json())
 app.use('/api',require('./Routes/CreateUser'));
+app.use('/api',require('./Routes/DisplayData'));
 const PORT = 5000;
 
 app.listen(PORT, () => {
