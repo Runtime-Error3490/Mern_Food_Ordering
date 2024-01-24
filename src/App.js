@@ -4,6 +4,7 @@ import Home from './screens/Home';
 import Login from './screens/Login';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartProvider } from './component/ContextReducer';
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,6 +13,7 @@ import {
 import Signup from './screens/Signup';
 function App() {
   return (
+    <CartProvider>
     <Router> 
     <div>
     <Routes>
@@ -21,6 +23,7 @@ function App() {
     </Routes>
     </div>
     </Router>
+    </CartProvider>
   );
 }
 
