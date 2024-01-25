@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use('/api',require('./Routes/CreateUser'));
 app.use('/api',require('./Routes/DisplayData'));
+app.use('/api',require('./Routes/OrderData'));
 const PORT = 5000;
 
 app.listen(PORT, () => {

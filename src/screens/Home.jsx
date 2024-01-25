@@ -4,7 +4,6 @@ import Footer from '../component/Footer'
 import Card from '../component/Card'
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from '../component/Carousel'
 export default function Home() {
   const [search,setSearch]=useState('');
   const [food_category, setFood_category] = useState([]);

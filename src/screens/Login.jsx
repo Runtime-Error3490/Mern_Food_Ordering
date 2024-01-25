@@ -25,9 +25,9 @@ export default function Login() {
       window.alert("Invalid Credentials");
     }
     else{
+      localStorage.setItem('userEmail',credentials.email);
       localStorage.setItem('authToken',data.authToken);
       navigate("/");
-      console.log(localStorage.authToken);
     }
 
   }
