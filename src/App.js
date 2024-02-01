@@ -11,6 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import Signup from './screens/Signup';
+import MyOrder from './screens/MyOrder';
 function App() {
   return (
     <CartProvider>
@@ -20,6 +21,7 @@ function App() {
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/login" element={<Login/>}/>
     <Route exact path="/CreateUser" element={<Signup/>}/>
+    <Route exact path="/myOrder" element={<MyOrder/>}/>
     </Routes>
     </div>
     </Router>

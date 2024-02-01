@@ -30,7 +30,7 @@ export default function Navbar() {
                         {
                             (localStorage.getItem("authToken")) ?
                                 <li className="nav-item active" style={{ fontSize: "20px" }}>
-                                    <Link className="nav-link" to="/">My Orders <span className="sr-only">(current)</span></Link>
+                                    <Link className="nav-link" to="/myOrder">My Orders <span className="sr-only">(current)</span></Link>
                                 </li>
                                 : ""
                         }
