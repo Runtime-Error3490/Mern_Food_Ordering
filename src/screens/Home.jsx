@@ -9,7 +9,7 @@ export default function Home() {
   const [food_category, setFood_category] = useState([]);
   const [food_items, setFood_items] = useState([]);
   const loadData = async () => {
-    let response = await fetch('http://localhost:5000/api/foodData', {
+    let response = await fetch('https://mern-food-ordering-d891.onrender.com/api/foodData', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
