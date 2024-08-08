@@ -7,7 +7,7 @@ export default function MyOrder() {
 
   const fetchMyOrder = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/myOrderData", {
+      const response = await fetch("https://mern-food-ordering-d891.onrender.com/api/myOrderData", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
